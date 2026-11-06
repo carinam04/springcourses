@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bloom Abroad | Spring Student Courses</title>
+    @vite([
+        'resources/css/app.css',
+        'resources/js/app.js'
+    ])
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand-wrap">
+            <img class="brand-logo" src="{{ asset('images/logo.png') }}" alt="Bloom Abroad logo">
+            <div class="brand-meta">
+                <span class="brand-name">BEST Courses</span>
+                <small>Spring student programs</small>
+            </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="#top">Home</a>
+            <a href="https://example.com/faq" target="_blank" rel="noreferrer">FAQ</a>
+            <a href="#testimonials">Testimonials</a>
+        </nav>
+
+        <a href="#courses" class="nav-button">Apply now</a>
+    </header>
+
+    <main class="page-shell" id="top">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Spring into your next adventure</p>
+                <img class="titleimage" src="{{ asset('images/title.png') }}">
+                <p class="lead">
+                    Explore creative spring programs across beautiful destinations, meet students from around the world,
+                    and build unforgettable memories while you study.
+                </p>
+
+                <div class="cta-row">
+                    <a href="#courses" class="primary-btn">Explore courses</a>
+                    <a href="#testimonials" class="secondary-btn">See students' testimonials</a>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Featured cities and spring vibes">
+                <div class="scene-card scene-card-large">
+                    <div class="scene-badge">Paris</div>
+                    <h2>Creative Spring Studio</h2>
+                </div>
+                <div class="scene-grid">
+                    <div class="scene-card scene-card-small scene-card-mint">
+                        <div class="scene-badge">Lisbon</div>
+                        <h3>Design & Culture</h3>
+                    </div>
+                    <div class="scene-card scene-card-small scene-card-lavender">
+                        <div class="scene-badge">Kyoto</div>
+                        <h3>Language & Identity</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="countdown-wrap">
+                 <img class="arrow" src="{{ asset('images/arrow.png') }}">
+                 <div class="progress-block" aria-label="Registration countdown">
+                    <div class="progress-meta">
+                        <span>Hurry up and sign up!</span>
+                        <strong id="days-left-text">18 days left</strong>
+                    </div>
+                    <div id="my-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-deadline="2026-11-29T23:00:00">
+                        <span class="progress-fill" style="width: 0%"></span>
+                    </div>
+                 </div>
+                </div>
+
+        <section id="courses" class="courses-section">
+            <div class="section-heading">
+                <p class="eyebrow">Pick your spring path</p>
+                <h2>Explore the courses you can attend in spring.</h2>
+            </div>
+
+            <div class="board-string" aria-label="Course cards pinned to a string">
+                <article class="polaroid photo-one">
+                    <div class="washi-tape"></div>
+                    <div class="course-photo photo-1"></div>
+                    <div class="course-info">
+                        <p class="course-location">Paris, France</p>
+                        <h3>Creative storytelling</h3>
+                        <p class="course-blurb">Design your own visual stories and build a bold spring portfolio.</p>
+                    </div>
+                    <button type="button" class="course-button" data-course="paris">Learn more!</button>
+                </article>
+
+                <article class="polaroid photo-two">
+                    <div class="washi-tape"></div>
+                    <div class="course-photo photo-2"></div>
+                    <div class="course-info">
+                        <p class="course-location">Lisbon, Portugal</p>
+                        <h3>Coastal design lab</h3>
+                        <p class="course-blurb">Blend art, sustainability, and digital creativity in a vibrant coastal city.</p>
+                    </div>
+                    <button type="button" class="course-button" data-course="lisbon">Learn more!</button>
+                </article>
+
+                <article class="polaroid photo-three">
+                    <div class="washi-tape"></div>
+                    <div class="course-photo photo-3"></div>
+                    <div class="course-info">
+                        <p class="course-location">Kyoto, Japan</p>
+                        <h3>Culture & language</h3>
+                        <p class="course-blurb">Explore identity, community, and communication through local stories.</p>
+                    </div>
+                    <button type="button" class="course-button" data-course="kyoto">Learn more!</button>
+                </article>
+
+                <article class="polaroid photo-four">
+                    <div class="washi-tape"></div>
+                    <div class="course-photo photo-4"></div>
+                    <div class="course-info">
+                        <p class="course-location">Barcelona, Spain</p>
+                        <h3>Startup thinking</h3>
+                        <p class="course-blurb">Build ideas, test concepts, and pitch projects in a social innovation setting.</p>
+                    </div>
+                    <button type="button" class="course-button" data-course="barcelona">Learn more!</button>
+                </article>
+
+                <article class="polaroid photo-five">
+                    <div class="washi-tape"></div>
+                    <div class="course-photo photo-5"></div>
+                    <div class="course-info">
+                        <p class="course-location">Seoul, South Korea</p>
+                        <h3>Media & impact</h3>
+                        <p class="course-blurb">Create inspiring multimedia work with focus on storytelling and community.</p>
+                    </div>
+                    <button type="button" class="course-button" data-course="seoul">Learn more!</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="detail-panel" id="detail-panel" aria-live="polite">
+            <div class="detail-header">
+                <p class="eyebrow">Selected course</p>
+                <h3 id="detail-title">Creative storytelling</h3>
+            </div>
+
+            <div class="detail-layout">
+                <div class="detail-photo" id="detail-photo"></div>
+                <div class="detail-copy">
+                    <p class="detail-location" id="detail-location">Paris, France</p>
+                    <p id="detail-summary">
+                        Learn how to shape vibrant stories through visual language, creative practice, and personal expression.
+                    </p>
+                    <ul id="detail-list">
+                        <li>4-week immersive learning</li>
+                        <li>Creative workshops</li>
+                        <li>Portfolio feedback</li>
+                    </ul>
+                    <a class="primary-btn" href="https://example.com/apply" target="_blank" rel="noreferrer">Apply now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section" id="testimonials">
+            <div class="section-heading center-heading">
+                <p class="eyebrow">Student voices</p>
+                <h2>Past students still carry the spring magic with them.</h2>
+            </div>
+
+            <div class="envelope-shell">
+                <button type="button" class="testimonial-arrow left" aria-label="Previous testimonial">&#8249;</button>
+
+                <div class="envelope" aria-live="polite">
+                    <div class="envelope-top"></div>
+                    <div class="paper" id="testimonial-paper">
+                        <div class="quote-mark">“</div>
+                        <p id="testimonial-text">
+                            I came home with more confidence, stronger ideas, and friends from all over the world.
+                        </p>
+                        <div class="person-row">
+                            <strong id="testimonial-name">Lina M.</strong>
+                            <span id="testimonial-course">Paris Creative Storytelling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="testimonial-arrow right" aria-label="Next testimonial">&#8250;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-wrap">
+            <div>
+                <div class="brand-wrap footer-brand">
+                    <img class="brand-logo" src="{{ asset('images/logo.png') }}" alt="Bloom Abroad logo">
+                    <div class="brand-meta">
+                        <span class="brand-name">Bloom Abroad</span>
+                        <small>Study with joy</small>
+                    </div>
+                </div>
+                <p>Spring learning experiences designed for curious students who want to grow globally.</p>
+            </div>
+
+            <div>
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="https://example.com/faq" target="_blank" rel="noreferrer">FAQ</a></li>
+                    <li><a href="https://example.com/contact" target="_blank" rel="noreferrer">Contact</a></li>
+                    <li><a href="https://example.com/privacy" target="_blank" rel="noreferrer">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const courseData = {
+            paris: {
+                title: 'Creative storytelling',
+                location: 'Paris, France',
+                summary: 'Turn ideas into meaningful stories through visual communication, collaborative practice, and creative confidence.',
+                points: ['4-week immersive learning', 'Creative workshops', 'Portfolio feedback'],
+                photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80')"
+            },
+            lisbon: {
+                title: 'Coastal design lab',
+                location: 'Lisbon, Portugal',
+                summary: 'Explore how design, sustainability, and creativity can address real cultural and environmental challenges.',
+                points: ['Hands-on project work', 'Sustainability focus', 'Small mentor groups'],
+                photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80')"
+            },
+            kyoto: {
+                title: 'Culture & language',
+                location: 'Kyoto, Japan',
+                summary: 'Discover how culture, identity, and language shape the way people connect across borders and generations.',
+                points: ['Language immersion', 'Field-based learning', 'Cultural exchange'],
+                photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=80')"
+            },
+            barcelona: {
+                title: 'Startup thinking',
+                location: 'Barcelona, Spain',
+                summary: 'Build your own future-focused ideas with entrepreneurial tools, fast feedback cycles, and collaborative energy.',
+                points: ['Innovation sprint', 'Pitch practice', 'Global networking'],
+                photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=900&q=80')"
+            },
+            seoul: {
+                title: 'Media & impact',
+                location: 'Seoul, South Korea',
+                summary: 'Create meaningful media projects that combine storytelling, audience insight, and social awareness.',
+                points: ['Multimedia production', 'Community storytelling', 'Creative labs'],
+                photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80')"
+            }
+        };
+
+        const detailPanel = document.getElementById('detail-panel');
+        const detailTitle = document.getElementById('detail-title');
+        const detailLocation = document.getElementById('detail-location');
+        const detailSummary = document.getElementById('detail-summary');
+        const detailList = document.getElementById('detail-list');
+        const detailPhoto = document.getElementById('detail-photo');
+
+        document.querySelectorAll('.course-button').forEach((button) => {
+            button.addEventListener('click', () => {
+                const course = courseData[button.dataset.course];
+
+                if (!course) {
+                    return;
+                }
+
+                detailTitle.textContent = course.title;
+                detailLocation.textContent = course.location;
+                detailSummary.textContent = course.summary;
+                detailList.innerHTML = course.points.map((point) => `<li>${point}</li>`).join('');
+                detailPhoto.style.backgroundImage = course.photo;
+                detailPanel.classList.add('active');
+                detailPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        const testimonials = [
+            {
+                name: 'Lina M.',
+                course: 'Paris Creative Storytelling',
+                text: 'I came home with more confidence, stronger ideas, and friends from all over the world.'
+            },
+            {
+                name: 'Ahmed R.',
+                course: 'Lisbon Coastal Design Lab',
+                text: 'The course felt joyful and creative from day one. I learned so much while enjoying every moment.'
+            },
+            {
+                name: 'Sora H.',
+                course: 'Kyoto Culture & Language',
+                text: 'It was one of the most meaningful experiences I have had as a student. The support was incredible.'
+            },
+            {
+                name: 'Mila C.',
+                course: 'Barcelona Startup Thinking',
+                text: 'The projects were exciting, practical, and full of energy. I left with a stronger vision for my future.'
+            },
+            {
+                name: 'Noah K.',
+                course: 'Seoul Media & Impact',
+                text: 'I found my voice, created a portfolio piece I am proud of, and made lasting memories.'
+            },
+            {
+                name: 'Amelia S.',
+                course: 'Paris Creative Storytelling',
+                text: 'The experience was inspiring, international, and deeply empowering. I would do it again in a heartbeat.'
+            }
+        ];
+
+        const testimonialText = document.getElementById('testimonial-text');
+        const testimonialName = document.getElementById('testimonial-name');
+        const testimonialCourse = document.getElementById('testimonial-course');
+        let currentTestimonial = 0;
+
+        function renderTestimonial(index) {
+            const item = testimonials[index];
+            testimonialText.textContent = item.text;
+            testimonialName.textContent = item.name;
+            testimonialCourse.textContent = item.course;
+        }
+
+        document.querySelector('.testimonial-arrow.left').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            renderTestimonial(currentTestimonial);
+        });
+
+        document.querySelector('.testimonial-arrow.right').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            renderTestimonial(currentTestimonial);
+        });
+
+        renderTestimonial(currentTestimonial);
+    </script>
+</body>
+</html>
