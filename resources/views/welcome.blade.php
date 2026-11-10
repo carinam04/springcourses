@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloom Abroad | Spring Student Courses</title>
     @vite([
         'resources/css/app.css',
@@ -21,51 +21,60 @@
 
         <nav class="main-nav" aria-label="Main navigation">
             <a href="#top">Home</a>
-            <a href="https://example.com/faq" target="_blank" rel="noreferrer">FAQ</a>
+            <a href="https://www.best.eu.org/courses/frequentlyAskedQuestions.jsp" target="_blank" rel="noreferrer">FAQ</a>
             <a href="#testimonials">Testimonials</a>
         </nav>
-
-        <a href="#courses" class="nav-button">Apply now</a>
     </header>
 
     <main class="page-shell" id="top">
         <section class="hero">
             <div class="hero-copy">
-                <p class="eyebrow">Spring into your next adventure</p>
                 <img class="titleimage" src="{{ asset('images/title.png') }}">
-                <p class="lead">
-                    Explore creative spring programs across beautiful destinations, meet students from around the world,
-                    and build unforgettable memories while you study.
-                </p>
 
-                <div class="cta-row">
-                    <a href="#courses" class="primary-btn">Explore courses</a>
-                    <a href="#testimonials" class="secondary-btn">See students' testimonials</a>
-                </div>
             </div>
 
             <div class="hero-visual" aria-label="Featured cities and spring vibes">
+                <!-- 1 -->
                 <div class="scene-card scene-card-large">
                     <div class="scene-badge">Paris</div>
-                    <h2>Creative Spring Studio</h2>
+                    <h2>How to TrAIn Your Grid</h2>
                 </div>
+
                 <div class="scene-grid">
+                    <!-- 2 -->
                     <div class="scene-card scene-card-small scene-card-mint">
                         <div class="scene-badge">Lisbon</div>
-                        <h3>Design & Culture</h3>
+                        <h3>Beyond the taste</h3>
                     </div>
+                    <!-- 3 -->
                     <div class="scene-card scene-card-small scene-card-lavender">
                         <div class="scene-badge">Kyoto</div>
-                        <h3>Language & Identity</h3>
+                        <h3>Project Piltover</h3>
                     </div>
+                    <!-- 4 -->
+                    <div class="scene-card scene-card-small scene-card-peach">
+                        <div class="scene-badge">Barcelona</div>
+                        <h3>The Physics of Boo!</h3>
+                    </div>
+                    <!-- 5 -->
+                    <div class="scene-card scene-card-small scene-card-sky">
+                        <div class="scene-badge">Seoul</div>
+                        <h3>AI need a hero</h3>
+                    </div>
+                </div>
+
+                <div class="cta-row">
+                    <a href="#courses" class="primary-btn">Explore the courses</a>
+                    <a href="#testimonials" class="secondary-btn">See students' testimonials</a>
                 </div>
             </div>
         </section>
+        <img class="arrow" src="{{ asset('images/arrow.png') }}">
+        <p class="deadline">Applications end on November 29, 2026.</p>
         <div class="countdown-wrap">
-                 <img class="arrow" src="{{ asset('images/arrow.png') }}">
                  <div class="progress-block" aria-label="Registration countdown">
                     <div class="progress-meta">
-                        <span>Hurry up and sign up!</span>
+                        <span>Hurry and sign up!</span>
                         <strong id="days-left-text">18 days left</strong>
                     </div>
                     <div id="my-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-deadline="2026-11-29T23:00:00">
@@ -76,64 +85,67 @@
 
         <section id="courses" class="courses-section">
             <div class="section-heading">
-                <p class="eyebrow">Pick your spring path</p>
-                <h2>Explore the courses you can attend in spring.</h2>
+                
+                <h2>Explore the courses you can attend this spring.</h2>
             </div>
-
-            <div class="board-string" aria-label="Course cards pinned to a string">
+            
+            <div class="board-stringd">
                 <article class="polaroid photo-one">
-                    <div class="washi-tape"></div>
+                    <div class="board-stringm"></div>
+                    <img src="{{ asset('images/pinlightblue.png') }}" class="pin">
                     <div class="course-photo photo-1"></div>
                     <div class="course-info">
-                        <p class="course-location">Paris, France</p>
-                        <h3>Creative storytelling</h3>
+                        <p class="course-location">Zagreb, Croatia</p>
+                        <h3>How to TrAIn Your Grid: The Hidden World of Sustainable Energy</h3>
                         <p class="course-blurb">Design your own visual stories and build a bold spring portfolio.</p>
                     </div>
-                    <button type="button" class="course-button" data-course="paris">Learn more!</button>
+                    <button type="button" class="course-button" data-course="zagreb">Learn more!</button>
                 </article>
 
                 <article class="polaroid photo-two">
-                    <div class="washi-tape"></div>
+                    <img src="{{ asset('images/washitapemov.png') }}" class="washi-tape1">
                     <div class="course-photo photo-2"></div>
                     <div class="course-info">
-                        <p class="course-location">Lisbon, Portugal</p>
-                        <h3>Coastal design lab</h3>
+                        <p class="course-location">Thessaloniki, Greece</p>
+                        <h3>Beyond the taste: Fermentation, Innovation and Sustainability</h3>
                         <p class="course-blurb">Blend art, sustainability, and digital creativity in a vibrant coastal city.</p>
                     </div>
-                    <button type="button" class="course-button" data-course="lisbon">Learn more!</button>
+                    <button type="button" class="course-button" data-course="thessaloniki">Learn more!</button>
                 </article>
 
                 <article class="polaroid photo-three">
-                    <div class="washi-tape"></div>
+                    <div class="board-stringm"></div>
+                    <img src="{{ asset('images/pinpink.png') }}" class="pin">
                     <div class="course-photo photo-3"></div>
                     <div class="course-info">
-                        <p class="course-location">Kyoto, Japan</p>
-                        <h3>Culture & language</h3>
+                        <p class="course-location">Athens, Greece</p>
+                        <h3>Project Piltover: Engineering Sustainable Smart Cities</h3>
                         <p class="course-blurb">Explore identity, community, and communication through local stories.</p>
                     </div>
-                    <button type="button" class="course-button" data-course="kyoto">Learn more!</button>
+                    <button type="button" class="course-button" data-course="athens">Learn more!</button>
                 </article>
 
                 <article class="polaroid photo-four">
-                    <div class="washi-tape"></div>
+                    <img src="{{ asset('images/washitapecarouri.png') }}" class="washi-tape2">
                     <div class="course-photo photo-4"></div>
                     <div class="course-info">
-                        <p class="course-location">Barcelona, Spain</p>
-                        <h3>Startup thinking</h3>
+                        <p class="course-location">Valencia, Spain</p>
+                        <h3>The Physics of Boo! Science has never been this scary</h3>
                         <p class="course-blurb">Build ideas, test concepts, and pitch projects in a social innovation setting.</p>
                     </div>
-                    <button type="button" class="course-button" data-course="barcelona">Learn more!</button>
+                    <button type="button" class="course-button" data-course="valencia">Learn more!</button>
                 </article>
 
                 <article class="polaroid photo-five">
-                    <div class="washi-tape"></div>
+                    <img src="{{ asset('images/washitapeverde.png') }}" class="washi-tape3">
                     <div class="course-photo photo-5"></div>
                     <div class="course-info">
-                        <p class="course-location">Seoul, South Korea</p>
-                        <h3>Media & impact</h3>
+                        <p class="course-location">Turin, Italy</p>
+                        <h3>AI need a hero: Innovating the Future with AI</h3>
                         <p class="course-blurb">Create inspiring multimedia work with focus on storytelling and community.</p>
                     </div>
-                    <button type="button" class="course-button" data-course="seoul">Learn more!</button>
+                    <button type="button" class="course-button" data-course="turin">Learn more!</button>
+                    <img src="{{ asset('images/washitapeverde.png') }}" class="washi-tape4">
                 </article>
             </div>
         </section>
@@ -147,14 +159,14 @@
             <div class="detail-layout">
                 <div class="detail-photo" id="detail-photo"></div>
                 <div class="detail-copy">
-                    <p class="detail-location" id="detail-location">Paris, France</p>
+                    <p class="detail-location" id="detail-location">Zagreb, Croatia</p>
                     <p id="detail-summary">
                         Learn how to shape vibrant stories through visual language, creative practice, and personal expression.
                     </p>
                     <ul id="detail-list">
-                        <li>4-week immersive learning</li>
+                        <li>4-12 April 2027</li>
                         <li>Creative workshops</li>
-                        <li>Portfolio feedback</li>
+                        <li>90.0€</li>
                     </ul>
                     <a class="primary-btn" href="https://example.com/apply" target="_blank" rel="noreferrer">Apply now</a>
                 </div>
@@ -224,39 +236,39 @@
 
     <script>
         const courseData = {
-            paris: {
-                title: 'Creative storytelling',
-                location: 'Paris, France',
+            zagreb: {
+                title: 'How to TrAIn Your Grid: The Hidden World of Sustainable Energy',
+                location: 'Zagreb, Croatia',
                 summary: 'Turn ideas into meaningful stories through visual communication, collaborative practice, and creative confidence.',
-                points: ['4-week immersive learning', 'Creative workshops', 'Portfolio feedback'],
+                points: ['4-12 April 2027', 'Creative workshops', '90.0€'],
                 photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80')"
             },
-            lisbon: {
-                title: 'Coastal design lab',
-                location: 'Lisbon, Portugal',
+            thessaloniki: {
+                title: 'Beyond the taste: Fermentation, Innovation and Sustainability',
+                location: 'Thessaloniki, Greece',
                 summary: 'Explore how design, sustainability, and creativity can address real cultural and environmental challenges.',
-                points: ['Hands-on project work', 'Sustainability focus', 'Small mentor groups'],
+                points: ['11-19 April 2027', 'Sustainability focus', '90.0€'],
                 photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80')"
             },
-            kyoto: {
-                title: 'Culture & language',
-                location: 'Kyoto, Japan',
+            athens: {
+                title: 'Project Piltover: Engineering Sustainable Smart Cities',
+                location: 'Athens, Greece',
                 summary: 'Discover how culture, identity, and language shape the way people connect across borders and generations.',
-                points: ['Language immersion', 'Field-based learning', 'Cultural exchange'],
+                points: ['18-26 April 2027', 'Field-based learning', '72.0€'],
                 photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=80')"
             },
-            barcelona: {
-                title: 'Startup thinking',
-                location: 'Barcelona, Spain',
+            valencia: {
+                title: 'The Physics of Boo! Science has never been this scary',
+                location: 'Valencia, Spain',
                 summary: 'Build your own future-focused ideas with entrepreneurial tools, fast feedback cycles, and collaborative energy.',
-                points: ['Innovation sprint', 'Pitch practice', 'Global networking'],
+                points: ['25 April- 2 May 2027', 'Pitch practice', '80.0€'],
                 photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=900&q=80')"
             },
-            seoul: {
-                title: 'Media & impact',
-                location: 'Seoul, South Korea',
+            turin: {
+                title: 'AI need a hero: Innovating the Future with AI',
+                location: 'Turin, Italy',
                 summary: 'Create meaningful media projects that combine storytelling, audience insight, and social awareness.',
-                points: ['Multimedia production', 'Community storytelling', 'Creative labs'],
+                points: ['2-9 May 2027', 'Community storytelling', '80.0€'],
                 photo: "linear-gradient(rgba(27, 23, 53, 0.15), rgba(27, 23, 53, 0.28)), url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80')"
             }
         };
