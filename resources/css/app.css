@@ -47,7 +47,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     color: var(--text);
     background:
-        radial-gradient(circle at top left, rgba(255, 184, 214, 0.45), transparent 20%),
+        radial-gradient(circle at top left, rgba(247, 184, 255, 0.45), transparent 20%),
         radial-gradient(circle at bottom right, rgba(183, 226, 255, 0.45), transparent 18%),
         linear-gradient(180deg, #fffafc 0%, #f4fbff 100%);
 }
@@ -69,8 +69,16 @@ textarea {
 }
 
 .topbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    background-color: #ffe6fff7;
+}
+
+.topbar-inner{
     max-width: 1200px;
-    margin: 0 auto;
+     margin: 0 auto;
     padding: 1.1rem 1.5rem 0.8rem;
     display: flex;
     align-items: center;
@@ -114,9 +122,12 @@ textarea {
 }
 
 .main-nav {
+    position: sticky;
     display: flex;
     align-items: center;
+    top: 0;
     gap: 1.5rem;
+    z-index: 1000;
 }
 
 .main-nav a {
@@ -127,7 +138,8 @@ textarea {
     color: var(--lavender);
 }
 
-.primary-btn,
+.primary-btn1,
+.primary-btn2,
 .secondary-btn,
 .course-button {
     display: inline-flex;
@@ -141,8 +153,13 @@ textarea {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.primary-btn {
-    background: #f8b5ef;
+.primary-btn1{
+    background: #f2a3f6;
+    color: var(--navy);
+    box-shadow: 0 14px 24px rgba(237, 162, 192, 0.3);
+}
+.primary-btn2 {
+    background: #54d26b;
     color: var(--navy);
     box-shadow: 0 14px 24px rgba(237, 162, 192, 0.3);
 }
@@ -154,17 +171,18 @@ textarea {
 }
 
 
-.primary-btn:hover,
+.primary-btn1:hover,
+.primary-btn2:hover,
 .secondary-btn:hover,
 .course-button:hover,
 .testimonial-arrow:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .page-shell {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 1.5rem 2rem;
+    padding: 7rem 1.5rem 2rem;
 }
 
 .hero {
@@ -193,7 +211,8 @@ textarea {
 .section-heading h2 {
     margin: 0;
     color: var(--navy);
-    line-height: 3;
+    line-height: 2.3;
+    margin-bottom: 50px;
 }
 
 .hero h1 {
@@ -231,6 +250,7 @@ textarea {
     gap: 20px;
     max-width: 100%;
     margin: 40px auto;
+    margin-bottom: 100px;
 }
 .deadline {
     font-size: 18px;
@@ -238,7 +258,7 @@ textarea {
     color: var(--navy);
     margin-left: 160px;
     margin-top: -100px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 .arrow {
     width: 150px;
@@ -302,13 +322,27 @@ textarea {
     position: relative;
     overflow: hidden;
     border-radius: 2rem;
-    padding: 1.3rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     box-shadow: var(--shadow);
     background-size: cover;
     background-position: center;
+    z-index: 2;
+    max-height: 160px;
+    padding: 1rem 1rem;
+}
+
+.card-img{
+    max-height: 180px;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    margin-bottom: -60px;
 }
 
 .scene-card::before {
@@ -325,8 +359,9 @@ textarea {
 
 .scene-card-large {
     min-height: 200px;
-    background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80');
+    background-image: url('/public/images/zagreb1.jpg');
     margin-top: -40px;
+    
 }
 
 .scene-card-small {
@@ -334,19 +369,19 @@ textarea {
 }
 
 .scene-card-mint {
-    background-image: url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80');
+    background-image: url('/public/images/thessaloniki1.jpg');
 }
 
 .scene-card-lavender {
-    background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=80');
+    background-image: url('/public/images/athens1.jpg');
 }
 
 .scene-card-peach {
-    background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=900&q=80');
+    background-image: url('/public/images/valencia1.jpg');
 }
 
 .scene-card-sky {
-    background-image: url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80');
+    background-image: url('/public/images/turin1.jpg');
 }
 
 .scene-grid {
@@ -365,9 +400,9 @@ textarea {
     justify-content: center;
     padding: 0.5rem 0.8rem;
     border-radius: 999px;
-    background: rgb(251, 244, 108);
+    background: rgb(249, 242, 118);
     backdrop-filter: blur(10px);
-    color: #fff;
+    color: #090808;
     font-size: 0.72rem;
     font-weight: 900;
     letter-spacing: 0.08em;
@@ -570,23 +605,23 @@ textarea {
 }
 
 .photo-1 {
-    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80');
+    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2));
 }
 
 .photo-2 {
-    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2)), url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80');
+    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2));
 }
 
 .photo-3 {
-    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2)), url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=80');
+    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2));
 }
 
 .photo-4 {
-    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2)), url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=900&q=80');
+    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2));
 }
 
 .photo-5 {
-    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2)), url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80');
+    background-image: linear-gradient(rgba(55, 69, 104, 0.2), rgba(55, 69, 104, 0.2));
 }
 
 .course-info {
@@ -608,7 +643,7 @@ textarea {
     font-size: 1.25rem;
 }
 
-.course-blurb {
+.detailpolaroid {
     margin: 0.7rem 0 0;
     color: var(--muted);
     line-height: 1.55;
@@ -618,7 +653,7 @@ textarea {
 .course-button {
     width: 100%;
     margin-top: 0.75rem;
-    background: linear-gradient(135deg, #f9d2b4 0%, #f7bfd2 50%, #dfeeff 100%);
+    background: linear-gradient(135deg, #31d562 0%, #97e07f 50%, #75e98a 100%);
     color: var(--navy);
     box-shadow: 0 10px 18px rgba(221, 180, 162, 0.2);
 }
@@ -649,17 +684,17 @@ textarea {
 
 .detail-layout {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 0.5fr 1.1fr;
     gap: 1.2rem;
-    align-items: center;
+    align-items: start;
 }
 
 .detail-photo {
-    min-height: 240px;
-    border-radius: 1.6rem;
+    min-height: 450px;
+    border-radius: 0.5 rem;
     background-size: cover;
     background-position: center;
-    border: 1px solid rgba(146, 149, 176, 0.2);
+    border: 0.1px solid rgba(146, 149, 176, 0.2);
     box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
@@ -697,7 +732,8 @@ textarea {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 380px;
+    margin-bottom: 10px;
 }
 
 .testimonial-arrow {
@@ -705,7 +741,7 @@ textarea {
     height: 54px;
     border: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(247, 159, 234, 0.85);
     border: 1px solid rgba(134, 150, 205, 0.2);
     color: var(--navy);
     font-size: 2rem;
@@ -715,13 +751,12 @@ textarea {
 
 .envelope {
     position: relative;
-    width: min(620px, 80vw);
-    height: 360px;
+    width: min(600px, 80vw);
+    height: 330px;
     background: linear-gradient(180deg, #ffd8e6 0%, #f8b8d2 100%);
     border-radius: 28px;
-    border: 1px solid rgba(145, 123, 167, 0.2);
+    border: 1px solid rgba(138, 110, 166, 0.297);
     box-shadow: 0 25px 35px rgba(219, 141, 174, 0.22);
-    overflow: hidden;
 }
 
 .envelope::before {
@@ -730,25 +765,25 @@ textarea {
     left: 0;
     right: 0;
     top: 0;
-    border-left: 310px solid transparent;
-    border-right: 310px solid transparent;
+    border-left: 50% solid transparent;
+    border-right: 50% solid transparent;
     border-top: 150px solid rgba(255, 255, 255, 0.1);
 }
 
 .envelope-top {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.492), rgba(255, 255, 255, 0.285));
     clip-path: polygon(0 0, 100% 0, 50% 46%);
 }
 
 .paper {
     position: absolute;
     left: 50%;
-    top: 54%;
-    transform: translate(-50%, -50%) rotate(-1deg);
-    width: min(60%, 400px);
-    min-height: 220px;
+    margin-top: -300px;
+    transform: translateX(-50%) rotate(-1deg);
+    width: min(75%, 400px);
+    min-height: 500px;
     padding: 1.3rem 1.4rem 1rem;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.96);
@@ -768,6 +803,16 @@ textarea {
     color: var(--navy);
     line-height: 1.7;
     font-size: 1rem;
+}
+
+.testimonial-photo{
+    max-height: 350px;
+    width: auto;
+    margin-top: 30px;
+    object-fit: cover;
+    border: #353333;
+    border-radius: 5%;
+    box-shadow: 2px 2px 5px #44424257;
 }
 
 .person-row {
@@ -835,17 +880,31 @@ textarea {
 }
 
 @media (max-width: 480px) {
+
+    .page-shell{
+        padding: 8rem 1rem 1rem;
+    }
     .topbar {
         flex-wrap: wrap;
-        justify-content: left;
+        justify-content: center;
         margin-bottom: 3rem;
     }
 
     .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
         order: 3;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 1px;
         justify-content: center;
+    }
+
+    .topbar-inner{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .titleimage {
@@ -877,6 +936,7 @@ textarea {
 
     .envelope-shell {
         gap: 0.75rem;
+        margin-top: 550px;
     }
 
     .testimonial-arrow {
@@ -885,12 +945,17 @@ textarea {
     }
 
     .envelope {
-        height: 320px;
+        max-height: 250px;
+        max-width: 400px;
     }
 
     .paper {
         width: 72%;
-        min-height: 200px;
+        min-height: 600px;
+        max-width: 300px;
+        margin-left: 20px;
+        margin-top: -500px;
+        
     }
 
     .arrow {
